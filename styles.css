@@ -1,0 +1,261 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0% , rgba(253,187,45,1) 100%);
+    position: relative;
+}
+
+#pic1{
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    width: 180px;
+    height: 170px;
+    rotate: -20deg;
+    border: 4px solid #5a95ff;
+    border-radius: 7px;
+    outline: none;
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.3);
+}
+
+#pic2{
+    position: absolute;
+    top: 45%;
+    right: 9%;
+    width: 180px;
+    rotate: -3deg;
+    height: 170px;
+    border: 4px solid #5a95ff;
+    border-radius: 7px;
+    outline: none;
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.app{
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    max-width: 100%;
+    width: min(95vw, 500px);
+    margin: auto;
+    top: 40px;
+    left: 0;
+    right: 0;
+}
+
+.container{
+    background-color: #f1f8fb;
+    padding: 2em 2.5em;
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;  
+}
+
+#wrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 10px;
+}
+
+#wrapper input{
+    width: 100%;
+    background-color: transparent;
+    color: #111111;
+    font-size: 14px;
+    border: none;
+    border-bottom: 2px solid #d1d3d4;
+    padding: 15px 7px;
+}
+
+#wrapper input:focus{
+    outline: none;
+    border-color:  #5a95ff ;
+}
+
+#wrapper button{
+    position: relative;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: #5a95ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#error{
+    text-align: center;
+    background-color: white;
+    color: #ff5c5c;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+}
+
+#tasks{
+    margin-top: 0.8em;
+    border-radius: 0.5em;
+    width: 100%;
+    position: relative;
+    padding: 0.5em 0.5em;
+}
+
+.task{
+    background-color: #fff;
+    padding: 0.5em 1em;
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr;
+    gap: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    cursor: pointer;
+}
+
+.task:not(:first-child){
+    margin-top: 1em;
+}
+
+.task input[type ="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width:  20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.task input[type="checkbox"]:after{
+    content: "\f00c";
+    color: #fff;
+    font-size: 1em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: none;
+}
+
+.task input[type="checkbox"]:checked {
+    background-color: #5a95ff;
+    border-color: #5a95ff;
+}
+
+.task input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+.task span{
+    font: 0.9em;
+    font-weight: 400;
+    word-break: break-all;
+}
+
+.task button{
+    color: #fff;
+    width: 100%;
+    padding: 0.8em 0;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.edit{
+    background-color: #5a95ff;
+}
+
+.delete{
+    background-color: #ff5c5c;
+}
+
+#pending-tasks span{
+    color: #5a95ff;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+
+footer{
+    background-color: rgba(253,187,45,1);
+    text-align: center;
+    font-size: 17px;
+    padding: 5px; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5em 2em;
+    }
+
+    #wrapper {
+        grid-template-columns: 1fr auto;
+    }
+
+    #wrapper button {
+        padding: 14px 20px;
+        font-size: 12px;
+    }
+
+    img{
+        display: none;
+    }
+
+    .task {
+        grid-template-columns: fr fr 1fr;
+    }
+
+    .task span {
+        font-size: 1em;
+    }
+
+    .task button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1em 1.5em;
+    }
+
+    #wrapper input, #wrapper button {
+        font-size: 22px;
+    }
+
+    .task {
+        grid-template-columns: 1fr fr;
+        gap: 0.5em;
+    }
+
+    img{
+        display: none;
+    }
+
+    .task span {
+        font-size: 1.2em;
+    }
+
+    .task button {
+        padding: 1em;
+        font-size: 15px;
+    }
+}

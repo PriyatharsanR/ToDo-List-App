@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <!----------Style sheet----------->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <img src="https://store-images.microsoft.com/image/apps.41950.9007199266362515.69d6bbde-af16-436e-85bc-3d35dd8ce83d.14759df0-8bb3-469b-8ac1-019634e294be?h=210" alt="" id="pic1">
+
+    <img src="https://cdn.dribbble.com/users/4241563/screenshots/11874468/media/7796309c77cf752615a3f9062e6a3b3d.gif" alt="" id="pic2">
+    <div class="app">
+        <div class="container">
+            <div id="wrapper">
+                <input type="text" placeholder="Task To Be Done...." />
+                <button id="addBtn">Add</button>
+            </div>
+            
+            <div id="tasks">
+                <p id="pending-tasks">
+                    You have <span class="countValue">0</span> task(s) to complete.
+                </p>
+            </div>
+        </div>
+        <p id="error">Input cannot be empty!</p>
+    </div>
+
+    <footer>
+        Designed by <strong>&copy R PRIYATHARSAN.</strong>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
